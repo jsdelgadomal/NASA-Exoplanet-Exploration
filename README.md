@@ -22,10 +22,12 @@ to mapping thousands of host stars in interactive 3D space.
 Initially plotted discovery counts using `disc_pubdate` (publication date), which showed 
 two large artificial spikes roughly in 2014 and 2016. Traced back to bulk statistical validation 
 events, where NASA confirmed thousands of Kepler candidate planets in single batches. [source](https://www.nasa.gov/news-release/nasas-kepler-mission-announces-largest-collection-of-planets-ever-discovered/)
+
 Switched to `disc_year` (actual discovery year) for a more accurate view, but even 
 `disc_year` reflects official validation dates for these bulk-Kepler batches rather than 
 when the underlying observations were first made. Documented quirk of how 
 large-scale statistical validation gets dated, not a data error.
+
 ![Exoplanet Discoveries by Method and Year](Outputs/exoplanet-discoveries-by-method-and-year.svg)
 
 *Note:* When switching to `disc_year`, the graphic remained very similar. 
@@ -67,10 +69,15 @@ otherwise have been dropped.
 
 Produced three versions of the HR diagram:
 - Full dataset (O-type outliers visible far to the left)
+
 ![HR Diagram of Exoplanet Host Stars](Outputs/HR-diagram-exoplanet-host-stars.svg)
+
 - O/B types removed, to focus on the dense main cluster
+
 ![HR Diagram of Exoplanet Host Stars (Cluster)](Outputs/HR-diagram-exoplanets-host-stars-cluster.svg)
+
 - Zoomed further to K/G/F types specifically, the most common in the dataset
+
 ![HR Diagram of Exoplanet Host Stars (Most Common Types in Dataset)](Outputs/HR-diagram-exoplanets-host-stars-most-common.svg)
 
 Each uses a spectral-class color palette approximating real stellar colors 
@@ -92,15 +99,15 @@ relatively narrow slice of the galaxy immediately around the Sun, since exoplane
 toward the galactic core or outer disk are not included in this dataset.
 
 ### 5. Missing data is heavily concentrated in planetary characterization columns
-With 292 columns, checking missingness column-by-column isn't practical — instead, 
-looked at the overall shape of missingness across the dataset.
+With 292 columns, checking missing data column-by-column isn't practical. Instead, I 
+looked at the overall shape of missing data across the dataset.
 
 **Step 1: Sort by missing percentage.**
 
 The top of this list is noticeable: the 30th-most-missing column is still 95% missing, 
 the 50th is 93%, the 100th is 82%, and even the 140th column is 46% missing. 
 
-*(A full missingness chart across all 292 columns is saved separately due to its size. 
+*(A full missing data chart across all 292 columns is saved separately due to its size. 
 See [`Outputs/missing-data-full.svg`](Outputs/missing-data-full.svg) in the repo for 
 the complete column-by-column breakdown.)*
 
@@ -113,17 +120,19 @@ the complete column-by-column breakdown.)*
 | 50-75%    | 20           |
 | 75-90%    | 49           |
 | 90-100%   | 63           |
+
 Over a third of all columns (112 of 292) are missing more than 75% of their values.
 
 **Step 3: Check what kind of columns dominate the sparsest end.** 
 
 Grouping the ~100 most sparsely populated columns by their prefix (the archive's naming convention: 
-`pl_` = planet, `st_` = star, `sy_` = system):
+`pl_` = planet; `st_` = star; `sy_` = system):
 | Prefix | Count |
 |--------|-------|
 | `pl_`  | 61    |
 | `sy_`  | 22    |
 | `st_`  | 15    |
+
 *(`hd_` and `hip_` catalog-ID columns, 1 each, excluded as not relevant to this breakdown.)*
 
 **Interpretation:** Confirming an exoplanet's existence (via transit or radial 
