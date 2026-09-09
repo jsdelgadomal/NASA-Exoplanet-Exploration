@@ -27,6 +27,7 @@ Switched to `disc_year` (actual discovery year) for a more accurate view, but ev
 when the underlying observations were first made. Documented quirk of how 
 large-scale statistical validation gets dated, not a data error.
 ![Exoplanet Discoveries by Method and Year](Outputs/exoplanet-discoveries-by-method-and-year.svg)
+
 *Note:* When switching to `disc_year`, the graphic remained very similar. 
 
 ### 2. Star spectral type has too much missing data to use directly
@@ -82,7 +83,8 @@ Cartesian coordinates (x, y, z), placing Earth/the Sun at the origin. Plotted wi
 Plotly for interactivity (rotate/zoom/hover), colored by spectral class, with a 
 black space-like background. 
 `sy_dist` was only missing in 1.8% of rows (658 of 36,441), so this used nearly the full cleaned dataset.
-*Note:* Interactive map at [`Outputs/exoplanet_3d.html`](Outputs/exoplanet_3d.html)
+
+*Note:* Interactive map at [View the interactive 3D map](https://htmlpreview.github.io/?https://github.com/jsdelgadomal/NASA-Exoplanet-Exploration/blob/main/Outputs/exoplanet_3d.html)
 
 This section was driven mostly by personal curiosity of to see exoplanet host 
 stars laid out in actual 3D space. One limitation worth noting: the dataset spans a 
@@ -93,14 +95,16 @@ toward the galactic core or outer disk are not included in this dataset.
 With 292 columns, checking missingness column-by-column isn't practical — instead, 
 looked at the overall shape of missingness across the dataset.
 
-**Step 1: Sort by missingness percentage.**
+**Step 1: Sort by missing percentage.**
+
 The top of this list is noticeable: the 30th-most-missing column is still 95% missing, 
 the 50th is 93%, the 100th is 82%, and even the 140th column is 46% missing. 
+
 *(A full missingness chart across all 292 columns is saved separately due to its size. 
 See [`Outputs/missing-data-full.svg`](Outputs/missing-data-full.svg) in the repo for 
 the complete column-by-column breakdown.)*
 
-**Step 2: Bucket columns into missingness bands** for a clearer overall picture:
+**Step 2: Bucket columns into missing bands** for a clearer overall picture:
 | % Missing | # of Columns |
 |-----------|--------------|
 | 0-10%     | 104          |
@@ -111,8 +115,9 @@ the complete column-by-column breakdown.)*
 | 90-100%   | 63           |
 Over a third of all columns (112 of 292) are missing more than 75% of their values.
 
-**Step 3: Check what kind of columns dominate the sparsest end.** Grouping the ~100 
-most sparsely populated columns by their prefix (the archive's naming convention: 
+**Step 3: Check what kind of columns dominate the sparsest end.** 
+
+Grouping the ~100 most sparsely populated columns by their prefix (the archive's naming convention: 
 `pl_` = planet, `st_` = star, `sy_` = system):
 | Prefix | Count |
 |--------|-------|
@@ -164,7 +169,7 @@ period is just 9.45 days, though periods extending beyond 365 days are still
 present, likely from longer surveys like Kepler's continuous 4-year observation 
 window.
 
-**Example of a short-period transiting planet:**
+**Example of a transiting planet:**
 
 ![Kepler-10 Phase-Folded Light Curve](Outputs/kepler-10b-phasefolded-light-curve.svg)
 
