@@ -5,7 +5,7 @@ An open-ended exploration of NASA's Exoplanet Archive (~40,106 rows, 292 columns
 No single question is driving this one. The goal was to dig into a rich, unfamiliar 
 dataset and see what patterns, quirks, and data-quality lessons turned up along 
 the way. From tracing artificial spikes in discovery timelines back to bulk
-data-release events, to deriving a missing stellar object property using physics, 
+data-release events, to deriving a missing stellar-object property using physics, 
 to mapping thousands of host stars in interactive 3D space. 
 
 ## Data
