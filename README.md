@@ -84,7 +84,7 @@ Plotly for interactivity (rotate/zoom/hover), colored by spectral class, with a
 black space-like background. 
 `sy_dist` was only missing in 1.8% of rows (658 of 36,441), so this used nearly the full cleaned dataset.
 
-*Note:* Interactive map at [View the interactive 3D map](https://htmlpreview.github.io/?https://github.com/jsdelgadomal/NASA-Exoplanet-Exploration/blob/main/Outputs/exoplanet_3d.html)
+*Note:* [View the interactive 3D map](https://htmlpreview.github.io/?https://github.com/jsdelgadomal/NASA-Exoplanet-Exploration/blob/main/Outputs/exoplanet_3d.html)
 
 This section was driven mostly by personal curiosity of to see exoplanet host 
 stars laid out in actual 3D space. One limitation worth noting: the dataset spans a 
